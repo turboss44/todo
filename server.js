@@ -19,11 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
-// model
-// var Todo = mongoose.model('Todo', {
-//             text : String
-//         });
-  // get all
+
 
   app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -36,7 +32,7 @@ app.use(methodOverride());
       res.send(200);
     }
     else {
-    //move on
+
       next();
     }
 });
@@ -45,8 +41,6 @@ app.use(methodOverride());
         require('./route.js')(app);
 
 
-        // app.get('*', function(req, res) {
-        //     res.sendfile('./src/index.html');
-        // });
+        
         app.listen(8000);
             console.log("App listening on port 8000");
