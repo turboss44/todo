@@ -1,0 +1,19 @@
+<div id='bord'>
+<h1> Lista zadań</h1>
+
+<input type="text" placeholder="Twoje zadanie" [(ngModel)]="newTittle" (keyup.enter)="addTodo()" >
+</div>
+<ul >
+  <li *ngFor="let el of listOfTodo; let ind=index " >
+    <input type="checkbox" [(ngModel)]="el.finished">{{el.text}}
+<img id='del' src="https://i.imgur.com/mPIQQlH.png" width="25px" height= "25px" (click)=delTodo(el._id)>
+  </li>
+</ul>
+<!-- <div *ngFor="let task of TWOJA_ZMIENNA">
+  <p>Tekst: {{task.text}}</p>
+</div> -->
+
+
+<!-- <span [ngClass]="{'finished':el.finished}">  {{el.tittle}} </span>
+<img id='del' src="https://i.imgur.com/mPIQQlH.png" width="25px" height= "25px" (click)=delTodo(ind)> -->
+<!-- <button class="btn" (click)=delTodo(ind) ></button> -->
