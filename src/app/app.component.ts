@@ -18,18 +18,17 @@ export class AppComponent implements OnInit {
   newTittle:string= "";
   listOfTodo:string[];
   private headers = new Headers({'Content-Type': 'application/json'});
-  constructor(private http:Http){}
+  constructor(private http:Http){};
 
   ngOnInit(): void {
     this.getTodo();
     console.log('uruchamiam sie')
-  }
+  };
 
 
   addTodo(){
-    if(this.newTittle === '')
-    {}
-    else  {
+    if(this.newTittle !== '')
+    {
     this.http.post('http://localhost:8000/api/todos',{text:this.newTittle},this.headers)
     .toPromise()
     .then(()=>{console.log('post');this.getTodo();})
@@ -37,7 +36,7 @@ export class AppComponent implements OnInit {
     this.newTittle = '';
 
     }
-  }
+  };
 
   getTodo(){
     console.log('t1')
@@ -55,7 +54,7 @@ export class AppComponent implements OnInit {
 
         })
         .catch(()=>{console.log('blad pobierania')});
-  }
+  };
 
   delTodo(todo_id){
     console.log(todo_id)
@@ -63,6 +62,6 @@ export class AppComponent implements OnInit {
       .toPromise()
       .then(() =>{ null;this.getTodo();})
         .catch(()=>{console.log('blad usuwania')});
-          
-  }
+
+  };
 }

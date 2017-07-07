@@ -44,4 +44,4 @@ var Todo = require('./model_db');
                 getTodos(res);
             });
         });
-      }
+      };
