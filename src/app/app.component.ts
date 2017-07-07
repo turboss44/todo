@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
     .then(()=>{console.log('post');this.getTodo();})
     .catch(()=>{console.log('blad')});
     this.newTittle = '';
-
   };
   }
 
@@ -56,6 +55,5 @@ export class AppComponent implements OnInit {
       .toPromise()
       .then(() =>{ null;this.getTodo();})
         .catch(()=>{console.log('blad usuwania')});
-
   };
 }
