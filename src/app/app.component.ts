@@ -18,12 +18,12 @@ export class AppComponent implements OnInit {
   newTittle:string= "";
   listOfTodo:string[];
   private headers = new Headers({'Content-Type': 'application/json'});
-  constructor(private http:Http){};
+  constructor(private http:Http){}
 
   ngOnInit(): void {
     this.getTodo();
     console.log('uruchamiam sie')
-  };
+  }
 
 
   addTodo(){
@@ -35,17 +35,11 @@ export class AppComponent implements OnInit {
     .catch(()=>{console.log('blad')});
     this.newTittle = '';
 
-    }
   };
+  }
 
   getTodo(){
-    console.log('t1')
-    // this.http.get('http://localhost:8000/api/todos',)
-    // .toPromise()
-    // .then(response =>
-    //         this.listOfTodo = response.json().data)
-    // .catch(()=>{console.log('blad pobierania')});
-    // console.log(this.listOfTodo);
+    console.log('t1');
 
     this.http.get('http://localhost:8000/api/todos',)
         .toPromise()
